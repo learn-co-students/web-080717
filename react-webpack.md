@@ -42,13 +42,14 @@ What makes React and its Virtual DOM so different is that it's simpler than othe
 
 **One-way data binding** React uses one-way data binding to make things simpler. Every time you type in an input field in a React UI, for example, it doesn't directly change the state of that component. Instead, it updates the data model, which causes the UI to be updated and the text you typed into the field appears in the field.
 
-#### **ReactJS Data Flow**
-
-![](http://4.bp.blogspot.com/-Friqaj4UaPw/U6FhpqhpOUI/AAAAAAAADQ0/1J1dFyEF14E/s1600/Screen+Shot+2014-06-18+at+9.50.16+AM.png)
 
 #### **MVC Data Flow**
 
 ![](http://2.bp.blogspot.com/-fZKAYompt10/U6FhqKWWqsI/AAAAAAAADQ4/qr1FrRbV_gw/s1600/Screen+Shot+2014-06-18+at+9.49.33+AM.png)
+
+#### **ReactJS Data Flow**
+
+![](http://4.bp.blogspot.com/-Friqaj4UaPw/U6FhpqhpOUI/AAAAAAAADQ0/1J1dFyEF14E/s1600/Screen+Shot+2014-06-18+at+9.50.16+AM.png)
 
 ### Environment setup for ReactJS
 
