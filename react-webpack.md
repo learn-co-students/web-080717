@@ -42,7 +42,13 @@ What makes React and its Virtual DOM so different is that it's simpler than othe
 
 **One-way data binding** React uses one-way data binding to make things simpler. Every time you type in an input field in a React UI, for example, it doesn't directly change the state of that component. Instead, it updates the data model, which causes the UI to be updated and the text you typed into the field appears in the field.
 
-#### **ReactJS Data Flow** ![](http://4.bp.blogspot.com/-Friqaj4UaPw/U6FhpqhpOUI/AAAAAAAADQ0/1J1dFyEF14E/s1600/Screen+Shot+2014-06-18+at+9.50.16+AM.png) #### **MVC Data Flow** ![](http://2.bp.blogspot.com/-fZKAYompt10/U6FhqKWWqsI/AAAAAAAADQ4/qr1FrRbV_gw/s1600/Screen+Shot+2014-06-18+at+9.49.33+AM.png)
+#### **ReactJS Data Flow**
+
+![](http://4.bp.blogspot.com/-Friqaj4UaPw/U6FhpqhpOUI/AAAAAAAADQ0/1J1dFyEF14E/s1600/Screen+Shot+2014-06-18+at+9.50.16+AM.png)
+
+#### **MVC Data Flow**
+
+![](http://2.bp.blogspot.com/-fZKAYompt10/U6FhqKWWqsI/AAAAAAAADQ4/qr1FrRbV_gw/s1600/Screen+Shot+2014-06-18+at+9.49.33+AM.png)
 
 ### Environment setup for ReactJS
 
@@ -115,7 +121,7 @@ The last piece in our current setup is to transform our index.js file to become 
 
 `npm install babel-core babel-loader babel-preset-es2015 babel-preset-react babel-preset-stage-1 --save`
 
-```
+
 
 The second step is to tell webpack about Babel. In our webpack.config.js file, go ahead and add the following highlighted lines:
 
@@ -133,6 +139,49 @@ module : {
   }]
 }
 ```
+
+
+Full `webpack.config.js` file
+
+
+```javascript
+
+var webpack = require("webpack"),
+    path = require("path")
+
+var SRC = path.resolve(__dirname, "src")
+var BUILD = path.resolve(__dirname, "build")
+
+var config = {
+  entry: SRC + "/index.js",
+  output: {
+    path: BUILD,
+    filename: "bundle.js"
+  },
+  module : {
+    loaders: [{
+      test:/\.js$/,
+      loader: "babel-loader",
+      exclude:/node_modules/,
+      query: {
+        presets: ["es2015", "react", "stage-1"]
+      }
+    }]
+  }
+}
+
+module.exports = config
+
+
+
+```
+
+
+
+
+
+
+
 
 ### Lastly lets setup our Webpack dev server
 
