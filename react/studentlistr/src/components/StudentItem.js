@@ -16,7 +16,7 @@ class StudentItem extends React.Component {
   render() {
 
     return (
-      <li onClick={this.handleClick}>{this.props.student}</li>
+      <li onClick={this.handleClick}>{this.props.student.name}</li>
     )
   }
 }

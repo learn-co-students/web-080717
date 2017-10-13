@@ -9,11 +9,15 @@ class StudentsForm extends React.Component {
     this.state = {
       input: ""
     }
+    this.handleSubmit = this.handleSubmit.bind(this)
   }
 
-  handleSubmit = (event) => {
+  handleSubmit(event){
     event.preventDefault()
     this.props.onAdd(this.state.input)
+    this.setState({
+      input: ""
+    })
   }
 
   handleInputChange = (event) => {
@@ -27,7 +31,7 @@ class StudentsForm extends React.Component {
   render() {
     return (
       <form onSubmit={this.handleSubmit}>
-        <input type="text" onChange={this.handleInputChange}/>
+        <input type="text" onChange={this.handleInputChange} value={this.state.input}/>
         <input type="submit" value="Submit"/>
       </form>
     )
